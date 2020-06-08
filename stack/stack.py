@@ -22,6 +22,9 @@ class Stack:
         self.storage.append(value)
 
     def pop(self):
-        return self.storage.pop()
+        if len(self.storage)<=0:
+            pass
+        else: 
+            return self.storage.pop()
 
 
