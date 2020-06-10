@@ -47,7 +47,7 @@ class BSTNode:
             if self.left == None:
                 return False
             else: 
-                # Recursive 
+                # Recursive call checks the self.left.value
                 return self.left.contains(target)
         else: 
             # go right
@@ -55,11 +55,16 @@ class BSTNode:
             if self.right == None:
                 return False
             else:
+                # Recursive call checks the self.right.value 
                 return self.right.contains(target)
 
     # Return the maximum value found in the tree
     def get_max(self):
-        pass
+        if self.right: 
+            return self.right.get_max()
+        else:
+            return self.value
+        
 
     # Call the function `fn` on the value of each node
     def for_each(self, fn):
